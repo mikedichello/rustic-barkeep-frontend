@@ -1,0 +1,11 @@
+header {
+    height: 20vh;
+    background-color: #353336;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.logo {
+    height: 100%;
+    width: auto;
+}
