@@ -35,7 +35,7 @@ class BuyButton extends Component {
                 data-item-custom2-options={this.state.custom2Options}
                 data-item-custom3-name="Gift note"
                 >
-                <i class="fas fa-cart-plus fa-2x"></i> ({this.state.price}$)
+                <i className="fas fa-cart-plus fa-2x"></i> ({this.state.price}$)
             </button>
         );
     }

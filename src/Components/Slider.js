@@ -1,31 +1,81 @@
-import React, {Component} from 'react';
-import AutoplaySlider from 'react-awesome-slider/hoc/autoply';
-import AwesomeSliderStyles from 'react-awesome-slider/src/styled/fold-out-animation.scss'
+import React, { useState } from 'react';
+import {
+  Carousel,
+  CarouselItem,
+  CarouselControl,
+  CarouselIndicators,
+  CarouselCaption
+} from 'reactstrap';
 
-const Slider = (
-    <AutoplaySlider
-      play={true}
-      cancelOnInteraction={false}
-      interval={6000}
-      cssModule={AwesomeSliderStyles}
-    >
-      <div data-src="/path/to/image-0.jpg" />
-      <div data-src="/path/to/image-1.jpg" />
-      <div data-src="/path/to/image-2.jpg" />
-      <div data-src="/path/to/image-3.jpg" />
-    </AutoplaySlider>
-  );
+const items = [
+  {
+    src: './images/boardBG.jpg',
+    altText: 'boardBG',
+    caption: 'caption'
+  },
+  {
+    src: './images/fizzy.jpg',
+    altText: 'Fizzy',
+    caption: 'Slide 2'
+  },
+  {
+    src: './images/pour.jpg',
+    altText: 'pour',
+    caption: 'Slide 3'
+  },
+  {
+    src: './images/mule.jpg',
+    altText: 'mule',
+    caption: 'Slide 3'
+  }
+];
 
-class SliderView extends Component {
+const SliderView = (props) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [animating, setAnimating] = useState(false);
 
- render () {
+  const next = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+    setActiveIndex(nextIndex);
+  }
+
+  const previous = () => {
+    if (animating) return;
+    const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+    setActiveIndex(nextIndex);
+  }
+
+  const goToIndex = (newIndex) => {
+    if (animating) return;
+    setActiveIndex(newIndex);
+  }
+
+  const slides = items.map((item) => {
     return (
-    <>
-        <slider />
-    </>
+      <CarouselItem
+        onExiting={() => setAnimating(true)}
+        onExited={() => setAnimating(false)}
+        key={item.src}
+      >
+        <img className="carousel-image" src={item.src} alt={item.altText} />
+        <CarouselCaption captionText={item.caption} captionHeader={item.altText} />
+      </CarouselItem>
+    );
+  });
 
-    )
- }
+  return (
+    <Carousel
+      activeIndex={activeIndex}
+      next={next}
+      previous={previous}
+    >
+      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+      {slides}
+      <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+      <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+    </Carousel>
+  );
 }
 
-export default SliderView
+export default SliderView;
