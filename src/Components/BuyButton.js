@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'reactstrap';
 
 class BuyButton extends Component {
     constructor(props) {
@@ -21,8 +22,10 @@ class BuyButton extends Component {
 
     render() {
         return (
-            <button
+            <Button
                 className="snipcart-add-item BuyButton"
+                outline
+                color="secondary"
                 data-item-id={this.state.id}
                 data-item-name={this.state.name}
                 data-item-price={this.state.price}
@@ -36,7 +39,7 @@ class BuyButton extends Component {
                 data-item-custom3-name="Gift note"
                 >
                 <i className="fas fa-cart-plus fa-2x"></i> ({this.state.price}$)
-            </button>
+            </Button>
         );
     }
 }

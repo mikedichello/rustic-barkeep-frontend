@@ -4,7 +4,8 @@ import {
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
-  CarouselCaption
+  CarouselCaption,
+  Container
 } from 'reactstrap';
 
 const items = [
@@ -65,16 +66,18 @@ const SliderView = (props) => {
   });
 
   return (
-    <Carousel
-      activeIndex={activeIndex}
-      next={next}
-      previous={previous}
-    >
-      <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
-      {slides}
-      <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
-      <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
-    </Carousel>
+    <Container fluid className="py-4">
+      <Carousel
+        activeIndex={activeIndex}
+        next={next}
+        previous={previous}
+      >
+        <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+        {slides}
+        <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+        <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+      </Carousel>
+    </Container>
   );
 }
 
