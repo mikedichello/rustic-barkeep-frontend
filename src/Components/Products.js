@@ -3,7 +3,7 @@ import BuyButton from './BuyButton.js'
 import '../App/products.css';
 import {
     Card, CardImg, CardText, CardBody,
-    CardTitle, Row, Col
+    CardTitle, Row, Col, CardDeck
   } from 'reactstrap';
 
 class Products extends Component {
@@ -30,24 +30,24 @@ class Products extends Component {
 
     render() {
         return (
-            <main>
-                {this.state.products.map(product => {
-                    return(
-                        <Row>
-                            <Col>
-                                <Card>
-                                    <CardImg className="img-fluid" top width="100%" src={`http://localhost:1337/${product.Image[0].url}`} alt="Card image cap" />
-                                    <CardBody>
-                                    <CardTitle>{product.Name}</CardTitle>
-                                    {/* <CardSubtitle>Card subtitle</CardSubtitle>
-                                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText> */}
-                                    <BuyButton product={product} />
-                                    </CardBody>
-                                </Card>
-                            </Col>
-                        </Row>
-                    );
-                })}
+            <main className="container products-container">
+                <CardDeck>
+                    {this.state.products.map(product => {
+                        return(
+                                <Col lg="4">
+                                    <Card className="my-5">
+                                        <CardImg className="img-fluid" top width="100%" src={`http://localhost:1337/${product.Image[0].url}`} alt="Card image cap" />
+                                        <CardBody>
+                                        <CardTitle>{product.Name}</CardTitle>
+                                        {/* {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
+                                        {/* <CardText>{product.Description}</CardText>  */}
+                                        <BuyButton product={product} />
+                                        </CardBody>
+                                    </Card>
+                                </Col>
+                        );
+                    })}
+                </CardDeck>
             </main>
         )
     }
