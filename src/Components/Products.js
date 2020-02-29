@@ -20,7 +20,7 @@ class Products extends Component {
     }
 
     getProducts() {
-        fetch(`http://localhost:1337/items`)
+        fetch(`https://rustic-barkeep-server.herokuapp.com/items`)
             .then(res => res.json())
             .then(jsonedProducts => this.setState({products: jsonedProducts}))
             .catch(err => console.log(err))
