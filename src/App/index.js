@@ -3,7 +3,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Products from '../Components/Products.js'
 import Header from '../Components/Header.js'
 import SliderView from "../Components/Slider";
+import MainContent from "../Components/MainContent.js";
+import SocialMedia from "../Components/SocialMedia.js";
 import './style.css'
+import Footer from "../Components/Footer.js";
 
 class App extends Component {
   render() {
@@ -11,7 +14,10 @@ class App extends Component {
       <>
         <Header />  
         <SliderView />
+        <MainContent />
         <Products />
+        <SocialMedia />
+        <Footer />
       </>
     )
   }

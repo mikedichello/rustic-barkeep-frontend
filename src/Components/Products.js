@@ -3,7 +3,7 @@ import BuyButton from './BuyButton.js'
 import '../App/products.css';
 import {
     Card, CardImg, CardText, CardBody,
-    CardTitle, Row, Col, CardDeck
+    CardTitle, Col, CardDeck, Button
   } from 'reactstrap';
 
 class Products extends Component {
@@ -30,17 +30,15 @@ class Products extends Component {
 
     render() {
         return (
-            <main className="container products-container">
+            <main className="container-fluid products-container">
                 <CardDeck>
                     {this.state.products.map(product => {
                         return(
                                 <Col lg="4">
-                                    <Card className="my-5">
+                                    <Card className="product-card mx-5">
                                         <CardImg className="img-fluid" top width="100%" src={`http://localhost:1337/${product.Image[0].url}`} alt="Card image cap" />
                                         <CardBody>
-                                        <CardTitle>{product.Name}</CardTitle>
-                                        {/* {/* <CardSubtitle>Card subtitle</CardSubtitle> */}
-                                        {/* <CardText>{product.Description}</CardText>  */}
+                                        <CardTitle className="product-title">{product.Name}</CardTitle> 
                                         <BuyButton product={product} />
                                         </CardBody>
                                     </Card>

@@ -1,0 +1,10 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "BrandonText-Regular";
+  src: url("./fonts/HVDFonts-BrandonText-Regular.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/HVDFonts-BrandonText-Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/HVDFonts-BrandonText-Regular.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/HVDFonts-BrandonText-Regular.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

@@ -10,22 +10,22 @@ import {
 
 const items = [
   {
-    src: './images/boardBG.jpg',
+    src: './images/image_carousel-1-with-text.jpg',
     altText: 'boardBG',
     caption: 'caption'
   },
   {
-    src: './images/fizzy.jpg',
+    src: './images/image_carousel-2-with-text.jpg',
     altText: 'Fizzy',
     caption: 'Slide 2'
   },
   {
-    src: './images/pour.jpg',
+    src: './images/image_carousel-3-with-text.jpg',
     altText: 'pour',
     caption: 'Slide 3'
   },
   {
-    src: './images/mule.jpg',
+    src: './images/image_carousel-4-with-text.jpg',
     altText: 'mule',
     caption: 'Slide 3'
   }
@@ -59,14 +59,14 @@ const SliderView = (props) => {
         onExited={() => setAnimating(false)}
         key={item.src}
       >
-        <img className="carousel-image" src={item.src} alt={item.altText} />
-        <CarouselCaption captionText={item.caption} captionHeader={item.altText} />
+        <img className="carousel-image image-fluid" src={item.src} alt={item.altText} />
+        <CarouselCaption/>
       </CarouselItem>
     );
   });
 
   return (
-    <Container fluid className="py-4">
+    <Container fluid className="slider">
       <Carousel
         activeIndex={activeIndex}
         next={next}
