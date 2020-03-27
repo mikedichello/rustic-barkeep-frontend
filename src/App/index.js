@@ -8,6 +8,8 @@ import SocialMedia from "../Components/SocialMedia.js";
 import './style.css'
 import Footer from "../Components/Footer.js";
 
+const baseURL = 'http://192.241.135.177/items';
+
 class App extends Component {
   render() {
     return (
@@ -15,7 +17,7 @@ class App extends Component {
         <Header />  
         <SliderView />
         <MainContent />
-        <Products />
+        <Products baseURL={baseURL}/>
         <SocialMedia />
         <Footer />
       </>

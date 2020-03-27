@@ -45,7 +45,7 @@ class Footer extends Component {
                     <Amex className='payment-icon'/>
                     <PayPal className='payment-icon'/>
                 </div>
-                <h3 className='copywright'>© 2020 Rustic Barkeep</h3>
+                <h3 className='copyright'>© 2020 Rustic Barkeep</h3>
             </footer>
         )
     }

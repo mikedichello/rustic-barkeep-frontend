@@ -20,7 +20,7 @@ class Products extends Component {
     }
 
     getProducts() {
-        fetch(`https://rustic-barkeep-server.herokuapp.com/items`)
+        fetch(this.props.baseURL)
             .then(res => res.json())
             .then(jsonedProducts => this.setState({products: jsonedProducts}))
             .catch(err => console.log(err))
@@ -36,10 +36,10 @@ class Products extends Component {
                         return(
                                 <Col lg="4">
                                     <Card className="product-card mx-5">
-                                        <CardImg className="img-fluid" top width="100%" src={`http://localhost:1337/${product.Image[0].url}`} alt="Card image cap" />
+                                        <CardImg className="img-fluid product-image" top width="100%" src={`http://localhost:1337/${product.Image[0].url}`} alt="Card image cap" />
                                         <CardBody>
                                         <CardTitle className="product-title">{product.Name}</CardTitle> 
-                                        <BuyButton product={product} />
+                                        <BuyButton baseURL={this.props.baseURL} product={product} />
                                         </CardBody>
                                     </Card>
                                 </Col>

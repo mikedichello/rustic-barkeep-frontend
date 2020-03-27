@@ -135,6 +135,11 @@ header {
      margin-top: 10%;
      
  }
+/* .product-image {
+    height: 20vh;
+    width: 20vh;
+    object-fit: cover;
+} */
 
  .products-container {
      margin-top: 10vh;
@@ -190,14 +195,23 @@ header {
      display: flex;
      flex-direction: column;
      justify-content: center;
-     align-items: flex-start;
+     align-items: center;
      margin:10%;
  }
 
  .ig-name {
     font-family: 'titleFontBold', sans-serif;
     font-size: 24px;
+    margin-left: 4.5%;
+    align-self: flex-start;
 
+ }
+
+ .ig-image-container {
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     
  }
 
  .ig-image {
@@ -270,7 +284,7 @@ header {
 
  }
 
- .copywright{
+ .copyright{
      text-align: center;
      margin: 2%;
      font-family: "titleFont", sans-serif;

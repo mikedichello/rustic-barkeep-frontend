@@ -11,7 +11,7 @@ class BuyButton extends Component {
             price: props.product.Price,
             image: props.product.Image[0].url,
             description: props.product.Description,
-            url: "https://localhost:1337/items",
+            url: this.props.baseURL,
             custom1Name: props.product.Custom1Name,
             custom1Options: props.product.Custom1Options,
             custom2Name: props.product.Custom2Name,
@@ -29,7 +29,7 @@ class BuyButton extends Component {
                 data-item-id={this.state.id}
                 data-item-name={this.state.name}
                 data-item-price={this.state.price}
-                data-item-image={`http://localhost:1337/${this.state.image}`}
+                data-item-image={`${this.props.baseURL}/${this.state.image}`}
                 data-item-url={this.state.url}
                 data-item-description={this.state.description}
                 data-item-custom1-name={this.state.custom1Name}
