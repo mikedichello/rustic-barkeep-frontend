@@ -29,7 +29,7 @@ class BuyButton extends Component {
                 data-item-id={this.state.id}
                 data-item-name={this.state.name}
                 data-item-price={this.state.price}
-                data-item-image={`${this.props.baseURL}/${this.state.image}`}
+                data-item-image={`http://192.241.135.177/${this.state.image}`}
                 data-item-url={this.state.url}
                 data-item-description={this.state.description}
                 data-item-custom1-name={this.state.custom1Name}

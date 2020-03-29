@@ -60,7 +60,7 @@ const SliderView = (props) => {
         key={item.src}
       >
         <img className="carousel-image image-fluid" src={item.src} alt={item.altText} />
-        <CarouselCaption/>
+        <CarouselCaption captionText={items.caption}/>
       </CarouselItem>
     );
   });
