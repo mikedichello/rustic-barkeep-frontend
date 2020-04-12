@@ -8,7 +8,7 @@ import SocialMedia from "../Components/SocialMedia.js";
 import './style.css'
 import Footer from "../Components/Footer.js";
 
-const baseURL = 'http://192.241.135.177/items';
+const baseURL = 'https://barback.dichello.dev/items';
 
 class App extends Component {
   render() {
