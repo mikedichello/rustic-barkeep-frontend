@@ -6,7 +6,7 @@ My frist attempt at creating an active e-commerce app. It utilizes Strapi for co
 
 ## Project Link
 ### [Rustic Barkeep](https://rustic-barkeep.herokuapp.com/#/)
-### [Item API](barback.dichello.dev/items)
+### [Item API](https://barback.dichello.dev/items)
 
 ## Technologies Used
 * ReactJS - Frontend
