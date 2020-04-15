@@ -36,7 +36,7 @@ class Products extends Component {
                         return(
                                 <Col lg="4">
                                     <Card className="product-card mx-5">
-                                        <CardImg className="img-fluid product-image" top width="100%" src={`http://192.241.135.177${product.Image[0].url}`} alt="Card image cap" />
+                                        <CardImg className="img-fluid product-image" top width="100%" src={`https://barback.dichello.dev${product.Image[0].url}`} alt="Card image cap" />
                                         <CardBody>
                                         <CardTitle className="product-title">{product.Name}</CardTitle> 
                                         <BuyButton baseURL={this.props.baseURL} product={product} />
